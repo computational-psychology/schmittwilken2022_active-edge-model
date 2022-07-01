@@ -276,17 +276,17 @@ def bandpass_filter(fx, fy, fcenter, sigma):
 
     Returns
     -------
-    dog
-        2D Difference-of-Gaussian filter in frequency domain.
+    bandpass
+        2D bandpass filter in frequency domain.
 
     """
     # Calculate the distance of each 2d spatial frequency from requested center frequency
     distance = np.abs(fcenter - np.sqrt(fx**2. + fy**2.))
 
     # Create bandpass filter:
-    bpfilt = 1. / (np.sqrt(2.*np.pi) * sigma) * np.exp(-(distance**2.) / (2.*sigma**2.))
-    bpfilt = bpfilt / bpfilt.max()
-    return bpfilt
+    bandpass = 1. / (np.sqrt(2.*np.pi) * sigma) * np.exp(-(distance**2.) / (2.*sigma**2.))
+    bandpass = bandpass / bandpass.max()
+    return bandpass
 
 
 # %%
