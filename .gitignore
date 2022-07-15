@@ -1,0 +1,4 @@
+# Avoid pushing results / visualizations
+simulations/**/
+**.png
+
